@@ -1,0 +1,194 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Frascati</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/App.css">
+</head>
+<body style="background-color: #FBF4EB; margin: 0; min-height: 100vh; display: flex; flex-direction: column;">
+
+   <header class="app-header">
+        
+        <div style="height: 32px; background-color: #A66D28;"></div>
+        
+        
+        <div style="height: 20px; background-color: #522020;"></div>
+        
+        <div style="height: 64px; background-color: #FBF4EB; display: flex; align-items: center; padding: 0 16px;">
+            <button id="menu-toggle" class="hamburger-btn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+    <nav id="drawer" class="drawer">
+        <div class="lang-toggle">
+            <a href="/it/" class="lang-btn ">IT</a>
+            <a href="/en/" class="lang-btn active">ENG</a>
+        </div>
+
+        <div style="flex: 1;">
+            <a href="/en/" class="menu-item ">
+                The Museum
+            </a>
+            
+            <a href="/en/percorsi/" class="menu-item ">
+                Choose your path
+            </a>
+
+            <a href="#" class="menu-item">
+                Floor Map
+            </a>
+
+            <a href="/en/simboli/" 
+               class="menu-item ">
+                Symbols Guide
+            </a>
+
+            <a href="/en/contatti/" 
+               class="menu-item ">
+                Contact Us
+            </a>
+        </div>
+
+        <div class="drawer-footer">
+            <svg viewBox="0 0 500 200" preserveAspectRatio="none" style="height: 100%; width: 100%; display: block;">
+                <path d="M0,100 C150,250 350,-50 500,100 L500,200 L0,200 Z" style="stroke: none; fill: #D9B382;"></path>
+            </svg>
+        </div>
+    </nav>
+
+    <style>
+        /* ... keeping your existing styles identical ... */
+        .standard-page-layout {
+            padding: 10px 24px 40px !important; 
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            display: block;
+        }
+        .drawer {
+            top: 116px !important;
+            height: calc(100vh - 116px) !important;
+            transform: translateX(-100%);
+            display: flex;
+            flex-direction: column;
+            z-index: 2000 !important;
+        }
+        .drawer-overlay {
+            z-index: 1999 !important;
+        }
+        .menu-item {
+            padding: 35px 24px !important;
+            font-size: 1.1rem !important;
+            line-height: 1.2 !important;
+        }
+        .drawer-footer {
+            margin-top: auto !important;
+            height: 180px !important;
+            background-color: transparent !important;
+            position: relative;
+            overflow: visible;
+        }
+        .menu-item.active {
+            background: rgba(0, 0, 0, 0.2) !important;
+            font-weight: 800 !important;
+        }
+        .lang-toggle {
+            display: flex;
+            gap: 12px;
+            padding: 24px 20px 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            padding: 6px 20px;
+            border-radius: 12px;
+            font-family: var(--font-body, serif);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active {
+            background-color: #FBF4EB !important; 
+            color: #703030 !important;
+            border-color: #FBF4EB !important;
+        }
+    </style>
+
+    <main style="flex: 1;">
+        
+<div class="page-container fade-up standard-page-layout" style="text-align: center;">
+    <h1 style="font-family: var(--font-display); color: var(--burgundy); font-size: 1.6rem; text-transform: uppercase; margin-bottom: 4px;">
+        Il Museo Tuscolano
+    </h1>
+    <h2 style="font-family: var(--font-display); color: var(--burgundy); font-size: 1.4rem; margin-bottom: 30px;">
+        Contact Us
+    </h2>
+
+    <div style="width: 180px; height: 180px; margin: 0 auto 40px; background-color: var(--burgundy); display: flex; align-items: center; justify-content: center; padding: 10px;">
+        <img src="/media/logo.png" alt="MUSA Logo" style="max-width: 100%; height: auto;">
+    </div>
+
+    <div style="text-align: left; max-width: 320px; margin: 0 auto; font-family: var(--font-body); color: var(--text); line-height: 1.6;">
+        <div style="margin-bottom: 20px;">
+            <p style="font-weight: 800; color: var(--burgundy);">
+                Address
+            </p>
+            <p>Scuderie Aldobrandini<br>Piazza Marconi, 6 – 00044<br>Frascati (RM)</p>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <p style="font-weight: 800; color: var(--burgundy);">
+                Phone
+            </p>
+            <p>06 94184 407</p>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <p style="font-weight: 800; color: var(--burgundy);">
+                Opening Hours
+            </p>
+            <p>
+                
+                    Tuesday to Sunday:<br>10:00 AM – 7:00 PM<br>Closed Mondays
+                
+            </p>
+        </div>
+
+        <div style="margin-bottom: 20px;">
+            <p style="font-weight: 800; color: var(--burgundy);">
+                Ticket Prices
+            </p>
+            <p>
+                
+                    Full: 5.00€<br>Reduced: 3.00€
+                
+            </p>
+        </div>
+    </div>
+</div>
+
+    </main>
+
+    <script>
+        const btn = document.getElementById('menu-toggle');
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('drawer-overlay');
+
+        function toggleMenu() {
+            btn.classList.toggle('is-open');
+            drawer.classList.toggle('open');
+            overlay.classList.toggle('open');
+        }
+
+        btn.onclick = toggleMenu;
+        overlay.onclick = toggleMenu;
+    </script>
+</body>
+</html>

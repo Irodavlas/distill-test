@@ -1,0 +1,207 @@
+  <!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Frascati</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/App.css">
+</head>
+<body style="background-color: #FBF4EB; margin: 0; min-height: 100vh; display: flex; flex-direction: column;">
+
+   <header class="app-header">
+        
+        <div style="height: 32px; background-color: #A66D28;"></div>
+        
+        
+        <div style="height: 20px; background-color: #522020;"></div>
+        
+        <div style="height: 64px; background-color: #FBF4EB; display: flex; align-items: center; padding: 0 16px;">
+            <button id="menu-toggle" class="hamburger-btn" aria-label="Apri menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+    <nav id="drawer" class="drawer">
+        <div class="lang-toggle">
+            <a href="/it/" class="lang-btn active">IT</a>
+            <a href="/en/" class="lang-btn ">ENG</a>
+        </div>
+
+        <div style="flex: 1;">
+            <a href="/it/" class="menu-item ">
+                Il museo
+            </a>
+            
+            <a href="/it/percorsi/" class="menu-item ">
+                Tipo di percorso
+            </a>
+
+            <a href="#" class="menu-item">
+                Planimetria
+            </a>
+
+            <a href="/it/simboli/" 
+               class="menu-item ">
+                Spiegazione simboli
+            </a>
+
+            <a href="/it/contatti/" 
+               class="menu-item ">
+                Contatti
+            </a>
+        </div>
+
+        <div class="drawer-footer">
+            <svg viewBox="0 0 500 200" preserveAspectRatio="none" style="height: 100%; width: 100%; display: block;">
+                <path d="M0,100 C150,250 350,-50 500,100 L500,200 L0,200 Z" style="stroke: none; fill: #D9B382;"></path>
+            </svg>
+        </div>
+    </nav>
+
+    <style>
+        /* ... keeping your existing styles identical ... */
+        .standard-page-layout {
+            padding: 10px 24px 40px !important; 
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            display: block;
+        }
+        .drawer {
+            top: 116px !important;
+            height: calc(100vh - 116px) !important;
+            transform: translateX(-100%);
+            display: flex;
+            flex-direction: column;
+            z-index: 2000 !important;
+        }
+        .drawer-overlay {
+            z-index: 1999 !important;
+        }
+        .menu-item {
+            padding: 35px 24px !important;
+            font-size: 1.1rem !important;
+            line-height: 1.2 !important;
+        }
+        .drawer-footer {
+            margin-top: auto !important;
+            height: 180px !important;
+            background-color: transparent !important;
+            position: relative;
+            overflow: visible;
+        }
+        .menu-item.active {
+            background: rgba(0, 0, 0, 0.2) !important;
+            font-weight: 800 !important;
+        }
+        .lang-toggle {
+            display: flex;
+            gap: 12px;
+            padding: 24px 20px 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            padding: 6px 20px;
+            border-radius: 12px;
+            font-family: var(--font-body, serif);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active {
+            background-color: #FBF4EB !important; 
+            color: #703030 !important;
+            border-color: #FBF4EB !important;
+        }
+    </style>
+
+    <main style="flex: 1;">
+        
+<div class="page-container fade-up standard-page-layout">
+    <h2 style="font-family: var(--font-display); color: var(--burgundy); font-size: 1.5rem; text-align: center; margin-bottom: 40px;">
+        Spiegazione dei simboli
+    </h2>
+
+    <div style="display: flex; flex-direction: column; gap: 40px; max-width: 500px; margin: 0 auto;">
+        
+        <div style="display: flex; align-items: flex-start; gap: 20px;">
+            
+            
+                <img src="/media/assets/icons/93181830-f357-4f14-844d-206656fd9c10_2.png" alt="Cicerone" style="width: 30%; height: auto; align-self: center;">
+            
+
+            <div style="font-family: var(--font-body); font-size: 0.90rem; line-height: 1.5; text-align: left;">
+                <p>
+                    <span style="font-weight: 800; color: var(--burgundy);">
+                        La pergamena
+                    </span><br>
+                    
+                        Simboleggia la figura di Cicerone, rappresentando il sapere, l’eloquenza e la trasmissione della cultura. Essa richiama il valore della parola scritta e del pensiero, elementi centrali nell’attività dell’oratore romano.
+                    
+                </p>
+            </div>
+        </div>
+        
+        <div style="display: flex; align-items: flex-start; gap: 20px;">
+            
+            
+                <img src="/media/assets/icons/02238760-8187-4509-9839-81c569215572_2.png" alt="Menade" style="width: 30%; height: auto; align-self: center;">
+            
+
+            <div style="font-family: var(--font-body); font-size: 0.90rem; line-height: 1.5; text-align: left;">
+                <p>
+                    <span style="font-weight: 800; color: var(--burgundy);">
+                        Il grappolo d’uva
+                    </span><br>
+                    
+                        Richiama la figura della Menade, simbolo di vitalità, ebbrezza e istinto. Esso rappresenta il legame con il culto di Dioniso, evocando l’energia primordiale, la libertà espressiva e l’abbandono alle passioni.
+                    
+                </p>
+            </div>
+        </div>
+        
+        <div style="display: flex; align-items: flex-start; gap: 20px;">
+            
+            
+                <img src="/media/assets/icons/c7005c04-4660-4bc8-939b-1b3f57e416a4_2.png" alt="Cardinale Duca di York" style="width: 30%; height: auto; align-self: center;">
+            
+
+            <div style="font-family: var(--font-body); font-size: 0.90rem; line-height: 1.5; text-align: left;">
+                <p>
+                    <span style="font-weight: 800; color: var(--burgundy);">
+                        Il cappello da cardinale
+                    </span><br>
+                    
+                        Simboleggia la figura del Cardinale di York, richiamando l’autorità ecclesiastica, il prestigio e il ruolo di rilievo all’interno della gerarchia della Chiesa. Esso rappresenta inoltre la dimensione spirituale e politica che caratterizzò la sua figura storica.
+                    
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+    </main>
+
+    <script>
+        const btn = document.getElementById('menu-toggle');
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('drawer-overlay');
+
+        function toggleMenu() {
+            btn.classList.toggle('is-open');
+            drawer.classList.toggle('open');
+            overlay.classList.toggle('open');
+        }
+
+        btn.onclick = toggleMenu;
+        overlay.onclick = toggleMenu;
+    </script>
+</body>
+</html>

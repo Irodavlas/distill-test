@@ -1,0 +1,172 @@
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Museo Frascati</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/App.css">
+</head>
+<body style="background-color: #FBF4EB; margin: 0; min-height: 100vh; display: flex; flex-direction: column;">
+
+   <header class="app-header">
+        
+        <div style="height: 32px; background-color: #A66D28;"></div>
+        
+        
+        <div style="height: 20px; background-color: #522020;"></div>
+        
+        <div style="height: 64px; background-color: #FBF4EB; display: flex; align-items: center; padding: 0 16px;">
+            <button id="menu-toggle" class="hamburger-btn" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </header>
+
+    <div id="drawer-overlay" class="drawer-overlay"></div>
+    <nav id="drawer" class="drawer">
+        <div class="lang-toggle">
+            <a href="/it/" class="lang-btn ">IT</a>
+            <a href="/en/" class="lang-btn active">ENG</a>
+        </div>
+
+        <div style="flex: 1;">
+            <a href="/en/" class="menu-item ">
+                The Museum
+            </a>
+            
+            <a href="/en/percorsi/" class="menu-item ">
+                Choose your path
+            </a>
+
+            <a href="#" class="menu-item">
+                Floor Map
+            </a>
+
+            <a href="/en/simboli/" 
+               class="menu-item ">
+                Symbols Guide
+            </a>
+
+            <a href="/en/contatti/" 
+               class="menu-item ">
+                Contact Us
+            </a>
+        </div>
+
+        <div class="drawer-footer">
+            <svg viewBox="0 0 500 200" preserveAspectRatio="none" style="height: 100%; width: 100%; display: block;">
+                <path d="M0,100 C150,250 350,-50 500,100 L500,200 L0,200 Z" style="stroke: none; fill: #D9B382;"></path>
+            </svg>
+        </div>
+    </nav>
+
+    <style>
+        /* ... keeping your existing styles identical ... */
+        .standard-page-layout {
+            padding: 10px 24px 40px !important; 
+            text-align: center;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            display: block;
+        }
+        .drawer {
+            top: 116px !important;
+            height: calc(100vh - 116px) !important;
+            transform: translateX(-100%);
+            display: flex;
+            flex-direction: column;
+            z-index: 2000 !important;
+        }
+        .drawer-overlay {
+            z-index: 1999 !important;
+        }
+        .menu-item {
+            padding: 35px 24px !important;
+            font-size: 1.1rem !important;
+            line-height: 1.2 !important;
+        }
+        .drawer-footer {
+            margin-top: auto !important;
+            height: 180px !important;
+            background-color: transparent !important;
+            position: relative;
+            overflow: visible;
+        }
+        .menu-item.active {
+            background: rgba(0, 0, 0, 0.2) !important;
+            font-weight: 800 !important;
+        }
+        .lang-toggle {
+            display: flex;
+            gap: 12px;
+            padding: 24px 20px 10px;
+        }
+        .lang-btn {
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            padding: 6px 20px;
+            border-radius: 12px;
+            font-family: var(--font-body, serif);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .lang-btn.active {
+            background-color: #FBF4EB !important; 
+            color: #703030 !important;
+            border-color: #FBF4EB !important;
+        }
+    </style>
+
+    <main style="flex: 1;">
+        
+<div class="fade-up standard-page-layout" style="padding-bottom: 40px;">
+
+  <div style="text-align: center;">
+    <h1 style="font-family: var(--font-display); font-size: 1.3rem; font-weight: 700; color: #703030; line-height: 1.35; letter-spacing: 0.04em; text-transform: uppercase; margin: 0;">
+      
+        The Tusculan Museum<br>Aldobrandini Stables
+      
+    </h1>
+  </div>
+
+  <div style="display: flex; justify-content: center; padding: 20px 0;">
+    <div style="width: 160px; height: 160px; background-color: #703030; border-radius: 4px; display: flex; align-items: center; justify-content: center; padding: 16px;">
+        <img src="/media/logo.png" alt="MUSA logo" style="width: 168px; height: 168px; object-fit: contain;">
+    </div>
+  </div>
+
+  <div style="padding: 4px 28px 0; text-align: center;">
+    <p style="font-family: var(--font-body); font-size: 1rem; line-height: 1.5; color: #3a1a1a; margin: 0;">
+      
+        This 17th-century building, originally built as the stables for 
+        Villa Aldobrandini, was redeveloped in 2000 by architect 
+        Massimiliano Fuksas. This multi-functional space hosts the 
+        permanent archaeological collection, art exhibitions, educational 
+        workshops, multimedia spaces, and conferences.
+      
+    </p>
+  </div>
+</div>
+
+    </main>
+
+    <script>
+        const btn = document.getElementById('menu-toggle');
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('drawer-overlay');
+
+        function toggleMenu() {
+            btn.classList.toggle('is-open');
+            drawer.classList.toggle('open');
+            overlay.classList.toggle('open');
+        }
+
+        btn.onclick = toggleMenu;
+        overlay.onclick = toggleMenu;
+    </script>
+</body>
+</html>
